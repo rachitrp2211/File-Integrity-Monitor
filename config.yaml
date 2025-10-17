@@ -1,0 +1,23 @@
+paths:
+  - "C:/Users/patel/OneDrive/Desktop/fim_test"   # only include existing folders
+
+excludes:
+  - "*.log"
+  - "__pycache__/*"
+
+hash_algorithm: "sha256"
+
+baseline_file: "baseline.json"
+log_file: "fim.log"
+recursive: true
+
+email:
+  enabled: true
+  smtp_server: "smtp.gmail.com"
+  smtp_port: 587
+  use_tls: true
+  username: "YOUR_GMAIL@gmail.com"
+  password: "APP PASSWORD"
+  from: "YOUR_GMAILp@gmail.com"
+  to:
+    - "YOUR_GMAIL@gmail.com"

@@ -1,0 +1,13 @@
+[Unit]
+Description=File Integrity Monitor
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/file-integrity-monitor
+ExecStart=/usr/bin/python3 -m fim.main -c /opt/file-integrity-monitor/config.yaml
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
