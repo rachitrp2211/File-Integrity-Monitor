@@ -153,28 +153,28 @@ tail -f fim.log
 ### 🧩 Initialize Baseline  
 This screenshot shows the baseline initialization process, where the initial file hashes are created and stored in `baseline.json`.
 
-![Initialize Baseline](./screenshots/init-base.png)
+![Initialize Baseline](./screenshot/init-base.png)
 
 ---
 
 ### 🕵️‍♂️ Monitoring Started  
 Displays the CLI output when the File Integrity Monitor begins actively watching the configured directory for changes.
 
-![CLI Monitoring](./screenshots/cli-monitering.png)
+![CLI Monitoring](./screenshot/cli-monitering.png)
 
 ---
 
 ### ⚙️ Stress Simulation Running  
 Shows the stress-testing script generating multiple file events (create / modify / delete) to validate the monitoring performance.
 
-![CLI Stress Simulation](./screenshots/cli-stress.png)
+![CLI Stress Simulation](./screenshot/cli-stress.png)
 
 ---
 
 ### 📧 Email Alert Notification  
 Demonstrates the Gmail alert generated when the system detects a file integrity change or anomaly.
 
-![Gmail Alert Report](./screenshots/gmail-report.png)
+![Gmail Alert Report](./screenshot/gmail-report.png)
 
 ---
 
