@@ -178,6 +178,11 @@ Demonstrates the Gmail alert generated when the system detects a file integrity 
 
 ---
 
+<div align="center">
+
 ## License
 
 MIT License © 2025 Rachit Patel
+
+</div>
+
