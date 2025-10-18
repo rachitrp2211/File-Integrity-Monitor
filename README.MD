@@ -74,6 +74,37 @@ FIM ensures **system security** by detecting unauthorized tampering and maintain
 
 ---
 
+### Workflow Diagram
+
+```text
++--------------------+
+|   Config.yaml      |
++--------------------+
+          |
+          v
++--------------------+
+|   Baseline.json    |
++--------------------+
+          |
+          v
++--------------------+
+| Watchdog Observer  |
+| monitors folders   |
++--------------------+
+          |
+   +------+------+
+   |             |
+   v             v
+File change   File deleted
+detected      detected
+   |             |
+   v             v
+Update baseline & log event
+   |
+   v
+Send email alert / daily digest
+
+
 ## Setup Instructions
 
 1. **Clone the repository**  
@@ -92,7 +123,61 @@ pip install -r requirements.txt
 ```
 
 4. **Prepare monitored folders**  
+```
+Create a folder for testing (e.g., C:/Users/YourName/Desktop/fim_test)
+Update config.yaml paths accordingly
+```
+**Install dependencies** 
 
-Create a test folder or choose existing folders to monitor.
+1. Initialize baseline
+```
+python -m fim.main --init-baseline -c config.yaml
+```
+2. Start monitoring
+```
+python -m fim.main -c config.yaml
+```
 
+3. Check logs
+```
+tail -f fim.log
+```
 
+4. Receive email alerts for:
+• File creation
+• File modification
+• File deletion
+
+# 📸 Screenshots
+
+### 🧩 Initialize Baseline  
+This screenshot shows the baseline initialization process, where the initial file hashes are created and stored in `baseline.json`.
+
+![Initialize Baseline](./screenshots/init-base.png)
+
+---
+
+### 🕵️‍♂️ Monitoring Started  
+Displays the CLI output when the File Integrity Monitor begins actively watching the configured directory for changes.
+
+![CLI Monitoring](./screenshots/cli-monitering.png)
+
+---
+
+### ⚙️ Stress Simulation Running  
+Shows the stress-testing script generating multiple file events (create / modify / delete) to validate the monitoring performance.
+
+![CLI Stress Simulation](./screenshots/cli-stress.png)
+
+---
+
+### 📧 Email Alert Notification  
+Demonstrates the Gmail alert generated when the system detects a file integrity change or anomaly.
+
+![Gmail Alert Report](./screenshots/gmail-report.png)
+
+---
+
+## License
+
+MIT License © 2025 Rachit Patel
